@@ -2,6 +2,8 @@ import { of, from } from "rxjs";
 import { map, tap, take } from "rxjs/operators";
 
 /*
+//RxJS Operator: MAP;
+
 of(2, 4, 6).pipe(
   map(item => item * 2)
 ).subscribe(console.log);
@@ -10,6 +12,7 @@ of(2, 4, 6).pipe(
 */
 
 /*
+//RxJS Operator: TAP;
 of(2, 4, 6)
   .pipe(
     tap(item => console.log(item)),
@@ -22,3 +25,18 @@ of(2, 4, 6)
 
   //result: 2,4,1,4,8,5,6,12,9
   */
+
+/*
+//RxJS Operator: TAKE;
+of(2, 4, 6)
+  .pipe(
+    tap(item => console.log(item)),
+    map(item => item * 2),
+    take(2),
+    map(item => item - 3),
+    tap(item => console.log(item))
+  )
+  .subscribe();
+
+  //result: 2,1,4,5
+*/
