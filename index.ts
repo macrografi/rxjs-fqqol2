@@ -1,5 +1,5 @@
 import { of, from } from "rxjs";
-import { map, tap, take } from "rxjs/operators";
+import { map, tap, take, filter } from "rxjs/operators";
 
 /*
 //RxJS Operator: MAP;
@@ -39,4 +39,13 @@ of(2, 4, 6)
   .subscribe();
 
   //result: 2,1,4,5
+*/
+
+/*
+//RxJS Operator: TAKE;
+of(1, 2, 3, 4, 5)
+  .pipe(filter(item => item % 2 === 0))
+  .subscribe(console.log);
+
+  //result: 2,4
 */
